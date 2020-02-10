@@ -3,7 +3,8 @@
 	Report Generation Software   
 	Convert Excel.xlsx files into PDF.pdf file 
 	you can fork and alter the source code 
-	A custom gui UI has already been created 
+	A custom  GUI has already been created
+	PyQt5
 
 <b>	PIP Dependancies :  </b>
 
