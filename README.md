@@ -5,6 +5,9 @@
 	you can fork and alter the source code 
 	A custom  GUI has already been created
 	PyQt5
+![screenshot](https://github.com/GeniusWeeb/Excel2Pdf-Generator/blob/master/sample.PNG)
+
+
 
 <b>	PIP Dependancies :  </b>
 
