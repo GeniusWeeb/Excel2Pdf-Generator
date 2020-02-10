@@ -11,7 +11,7 @@
 
 <b>	PIP Dependancies :  </b>
 
- 	Do a pip Install all the required dependancies. </h4></u>
+ 	Do a pip Install all the required dependancies
 
 <b>This python software converts excel.xlsx file to a pdf file.</b><br>
 <b></i>PyQt5 library used</i></b>
