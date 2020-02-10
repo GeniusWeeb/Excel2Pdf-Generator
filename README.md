@@ -12,10 +12,10 @@
 </b>
 
 # Note : <b>use auto py-to-exe rather than pyInstaller to freeze the file to make it an executable </b>	
-	<p>1. the Images file should be included in the same directory as the rest of the aforementioned file . ".png " recommended. </p>
+	 the Images file should be included in the same directory as the rest of the aforementioned file . ".png " recommended. 
 
 #upcoming updates :
-	<b> will share links to the several dependancies, as weasyprint could be             a pain to install </b> 
+	<b> will share links to the several dependancies, as weasyprint could be a pain to install </b> 
 	
 				
 
