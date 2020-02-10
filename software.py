@@ -18,19 +18,31 @@ class window(QMainWindow):
 	def __init__(self):
 
 		super(window,self).__init__()
-		self.HAMA_dict= ['< 17 :','Mild Security' ,'18-24 :','Mild to Moderate Severity','25-30 :','Moderate to Severe' ]
-		self.Ybocs_dict= ['08-15 :','Mild OCD' ,'16-23 :','Moderate OCD','24-31 :','Severe OCD','32-40 :','Extreme OCD' ]
-		self.phobia_dict= ['0 :','None' ,'1 :','Mild','2 :','Moderate','3 :','Severe','4 :','Extreme' ]
+		#these are drop down box options that you can add on your own
+		#they are in a dictioanry format as while rendering from jinja2 , we need to store in dictionary like format
+		
+		
+		#uncomment them if u wanna use them in the same format or tinker with them
+		#they serve as refernce scales in a report , and be removed wihout causing any code errors
+		#self.HAMA_dict= ['< 01-10:','Mild ' ,'18-24 :','Moderate ','25-30 :',' Severe' ]
+		#self.Ybocs_dict= ['08-15 :','Mild OCD' ,'16-23 :','Moderate OCD','24-31 :','Severe OCD','32-40 :','Extreme OCD' ]
+		#self.phobia_dict= ['0 :','None' ,'1 :','Mild','2 :','Moderate','3 :','Severe','4 :','Extreme' ]
 	    		
 		self.check_file = False
 		self.confirm = False
 		self.setWindowTitle("VAR")
 		self.setGeometry(200,200,900,300)
 		self.value = " "
-		self.hama = "Hamlilton Anxiety Rating Scale"
-		self.sara= "Self-Assessment of Resilience and Anxiety Scale"
-		self.phobia="Severity Measure for Specific Phobia -Adult"
-		self.ybocs = "Yale-Brown Obsessive Compulsive Scale" 
+		
+		#these values are printed out , and we also use them to check 
+		#if the selected options in the drop-downboxes are same as these strings, then we print that certain
+		#drop-box option
+		self.hama = "hama _string"
+		self.sara= "sara _string"
+		self.phobia="phobia_string"
+		self.ybocs = "ybocs_string" 
+		
+		#created an empty static list to assign data to it later
 		self.send = ['','','','','','','','','','']
 	    
 
@@ -46,11 +58,7 @@ class window(QMainWindow):
 
 	   
 
-	#	self.button  = QPushButton(self);
-	#	self.button.setText("Press me sir")
-
-	#	self.button.setGeometry(800,450,100,100)
-	#	self.button.clicked.connect(self.but_press)
+	
 
 		font =QtGui.QFont()
 		font.setBold(True)
@@ -125,15 +133,6 @@ class window(QMainWindow):
     
 		
 
-	#	self.LE = QLineEdit(self)
-	#	self.LE.setGeometry(800,50,100,100)
-
-
-	#	self.Progress = QProgressBar(self)
-	#	self.Progress.setGeometry(400,400,300,20)
-
-	#	self.b = QPushButton('download', self)
-	#	self.b.clicked.connect(self.show_down)
 
 		#creating a file opener here
 		#its gonna be created after all the aforementioned content
@@ -146,11 +145,7 @@ class window(QMainWindow):
 
 
 
-	#	self.DataSend  = QPushButton("Submit Data",self)
-	#	self.DataSend.setGeometry(200,220,100,100)
-
-	# sending data of Age to the excel file and modifying contents
-	#	self.DataSend.clicked.connect(self.Excel_Edit)
+	
 
       
                 
@@ -183,8 +178,7 @@ class window(QMainWindow):
 
 
 
-		#self.setLayout(layout)
-
+		
 
        
 
@@ -197,7 +191,7 @@ class window(QMainWindow):
 	def file_open(self):
 
 		# once the file is returned from qT
-		#  we can store into a obejct called excel_File and then read that indo a data frame/
+		#  we can store into a object called excel_File and then read that into a data frame/
 		# then we can use openpyxl to perform actiions on it
 		# as well as defining the enabling of the objects there
 		try:
@@ -209,7 +203,7 @@ class window(QMainWindow):
 		    		
 		    
 			
-
+			#the below 2 steps can be done in a single step but i just prefered to cache it
 			self.file = pd.ExcelFile(self.name)
 			self.Temp_Sheet = pd.read_excel(self.file ,encoding = 'utf-8',index = False )
 			
@@ -225,10 +219,11 @@ class window(QMainWindow):
 			print(self.Main_Sheet)
 			print("-----------------------DATA TYPES--------------------------")
 			
+			#these prints statements are essentials to the developers, so far as we are working on the 
+			#dev build , and to debug stats once the data excel file has been loaded.
 
 
-
-		
+			#status text that appears on the gui
 			message = "FILE HAS BEEN LOADED !!"
 			
 			self.labelST.setText(message)
@@ -246,81 +241,32 @@ class window(QMainWindow):
 			
 			message="FILE HAS NOT BEEN LOADED"
 			self.labelST.setText(message)
-		#	self.label.setText("No file has been added")
-
-
-
-#	def Excel_Edit(self):	
-	# we are going to make us of  self.AgeEdit.text() here and modify the data
-		print("")
-		#all excel edits gui and stuff to be made  here
-		#all connections
-
-#	def reset(self):
-#		print("HI we are here")
-#		self.check_file = False
-#		self.confirm = False
 
 
 
 
-
-
-#	def show_down(self):
-#		self.completed = 0
-
-#		while self.completed <100:
-			
-#			self.completed+=0.0001
-#			self.Progress.setValue(self.completed)
-			
-			
-			
-# this is a cusotm pop up  message box
-
-#	def but_press(self):
-#		mes = QMessageBox.question(self,"this is a sample string","are you sure?",QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel,QMessageBox.No)
-#		if mes == QMessageBox.Yes:
-#			self.label.setText("he pressed Yes")
-#		elif mes == QMessageBox.No:
-			
-#			self.label.setText(self.LE.text())
-#		else:
-#			self.label.setText("he pressed cancel")
-	
-	
-		
-		
-			
-
-
-#gen and save together
-
-
-
-
-
-
-
-
-
-
+	#Generates the output file : 
+	#these weir check conditions are for us to prevent them from using the buttonwihout loading in a file
 	def Gent(self):
 		if self.check_file ==  True and self.confirm == False:
 
 
-
+			#jinja2 at work here
 			try:
 				env = Environment(loader=FileSystemLoader('.'))
-				template = env.get_template("convert.html")
+				template = env.get_template("convert.html")  #refer the cpnvert.html in the repo.
 				print(self.send)
     		
 
+				#these can be removed since our content is static and the check tailors
+				#the output list/dictionary depending on the number of elements
 
-
-				if self.cb.currentText() == self.hama:
-					self.send = self.HAMA_dict.copy()
+				if self.cb.currentText() == self.hama:	#comparing checbox options
+					#current textbox options and the stored one
+					self.send = self.HAMA_dict.copy()  
+					#the refernce scale we talked about earlier . ref : lin26
 					self.value = "REFERENCE SCALE   :"
+					#based on these , we alter the refernce scales
 					self.send.insert(6,'')
 					self.send.insert(7,'')
 					self.send.insert(8,'')
@@ -351,7 +297,9 @@ class window(QMainWindow):
 			                   "HAMA_DATA": self.Main_Sheet.to_html(justify='left',col_space=3,show_dimensions= False, ),
 			           #      "HAMA_DATA": change(self),
 
-
+					#if we take small refernce scale  , the indexes at 7,8,9 will have null
+					#but such a list cant exist during runtime generation
+					#therefore we have ,  self.value = "" above in certain cases
 			                
 			                 "NAME": self.NameE.text(),
 			                 'AGE' : self._age.text(),
@@ -392,11 +340,13 @@ class window(QMainWindow):
 					self.check_file = True	
 					HTML(string=html_out).write_pdf("{0}.pdf".format(self.name),stylesheets=['style.css'],presentational_hints =True)
 					print(self.name)
-				#	print(template_vars['title'])
+				
 					message="PDF HAS BEEN GENERATED"
 					self.labelST.setStyleSheet('color: green')
 					self.labelST.setText(message)
 					
+					
+					#clear all fields when successful generation
 					self.NameE.clear()
 					self._age.clear()
 					self._gender.clear()
@@ -411,31 +361,20 @@ class window(QMainWindow):
 					print("reset not working")	
 
 
-	
-	 	
-			
-
-
-					
-
-				
-				
-		#		
-
-
-
 
 		#		so he can remove the write_pdf part and put it some where else coz it
 		#		sans-throws an error so it must be fine in that weasyprint
 
 
 
-
+		#the whole conversion takes place in one function
+		# for better reusbality , u can break it down where you like
+		#whatever suits your needs
 
 	
 				
 
-
+			
 			except:
 				message="ERROR !! NOT PRINTED"
 				self.labelST.setText(message)
