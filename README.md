@@ -16,8 +16,8 @@ the Images file should be included in the same directory as the rest of the afor
 
 
 <br><br>
-#upcoming updates :
-	<b> will share links to the several dependancies, as weasyprint could be a pain to install </b> 
+# upcoming updates :
+	 will share links to the several dependancies, as weasyprint could be a pain to install 
 	
 <h4>Dependancies : </h4>
 </t>	reserved
