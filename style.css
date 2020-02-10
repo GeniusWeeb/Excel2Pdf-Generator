@@ -1,0 +1,75 @@
+@page {
+    size: Letter;
+    margin: 0.4cm
+   
+}
+
+
+title{
+	align-content: center;
+
+}
+
+
+.main{
+	font-size: 	250%	;	
+	text-align: center;
+	font-weight: 	bold;	
+
+
+}
+
+.sub{
+
+	font-size: 	15px;
+	text-align: 	center;	
+}
+
+.sup{
+	text-align: center;
+	font-size: small;
+	text-decoration: underline;
+
+}
+
+.container{
+				display: flex;
+
+
+
+}
+.container span{
+
+margin-right: 9em;
+font-weight: bold;
+
+
+
+
+
+
+}
+
+
+.container span::first-letter {
+
+	font-weight: bold;
+}
+
+.label {
+	font-weight: bold;
+	font font-family:  "Times New Roman", Times, serif;
+	font-style: italic;
+
+
+}
+
+h4 {
+    color: black;
+    
+   
+   
+    
+   	
+  }
+
